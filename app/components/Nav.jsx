@@ -34,6 +34,17 @@ const Navbar = () => {
     { name: "Denmark", path: "/migrate#denmark" },
     { name: "UAE", path: "/migrate#uae" },
   ];
+  const prVisaSubPages = [
+    { name: "Portugal Jobseeker", path: "/pr#residency" },
+    { name: "Schngen Visa", path: "/pr#schengen" },
+    { name: "Resume Marketing Service", path: "/pr#marketing" },
+    { name: "Study Abroad with VJC", path: "/pr#marketing" },
+    { name: "Sweden Jobseeker", path: "/pr#marketing" },
+    { name: "Visit Visa Services", path: "/pr#marketing" },
+    { name: "Work Abroad with VJC", path: "/pr#marketing" },
+  
+  
+  ];
   
   
   
@@ -108,20 +119,27 @@ const Navbar = () => {
     <div className="flex flex-row -space-x-2 whitespace-nowrap">
       {menuItems.map((item, index) => (
         <React.Fragment key={item.name}>
-          {item.name === "Migrate To" ? (
+          {/* Check for "Migrate To" and "PR Visas" */}
+          {item.name === "Migrate To" || item.name === "PR Visas" ? (
             <div className="relative group">
               <span className="text-white text-sm lg:text-xs font-semibold px-3.5 hover:bg-white hover:bg-opacity-20 uppercase mt-1">
                 {item.name}
               </span>
-              {/* Migrate Submenu */}
-              <div className="absolute left-0 hidden group-hover:block bg-gray-50 p-2 space-y-2 rounded-lg shadow-lg ">
-                {migrateSubPages.map((subItem) => (
+              {/* Submenu */}
+              <div className="absolute left-0 hidden group-hover:block bg-gray-50 p-2 space-y-2 rounded-lg shadow-lg z-50">
+                {/* Conditionally Render Submenus */}
+                {(item.name === "Migrate To" ? migrateSubPages : prVisaSubPages).map((subItem) => (
                   <Link
                     href={subItem.path}
                     key={subItem.name}
                     className="text-orange-500 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-orange-200 hover:bg-opacity-30 transition-all ease-in-out block"
                   >
-                    {subItem.name}
+                    {/* Ensure subItem.name and subItem.path are strings */}
+                    {typeof subItem.name === 'string' && typeof subItem.path === 'string' ? (
+                      subItem.name
+                    ) : (
+                      <span>Error: Invalid data</span>
+                    )}
                   </Link>
                 ))}
               </div>
@@ -131,7 +149,12 @@ const Navbar = () => {
               href={item.path}
               className="text-white text-sm lg:text-xs font-semibold px-3.5 hover:bg-white hover:bg-opacity-20 uppercase mt-1"
             >
-              {item.name}
+              {/* Ensure item.name and item.path are strings */}
+              {typeof item.name === 'string' && typeof item.path === 'string' ? (
+                item.name
+              ) : (
+                <span>Error: Invalid data</span>
+              )}
             </Link>
           )}
           {index < menuItems.length - 1 && <span className="text-white hidden lg:inline-block">|</span>}
@@ -140,7 +163,6 @@ const Navbar = () => {
     </div>
   </nav>
 </div>
-
 
 {/* Small devices */}
 <div className="bg-orange-500 fixed top-12 w-screen z-50 md:hidden">

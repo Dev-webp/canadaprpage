@@ -13,7 +13,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        times: ["Times New Roman", "serif"],  // Custom class for Times New Roman
+        times: ["Times New Roman"],  // Custom class for Times New Roman
       },
     },
   },
