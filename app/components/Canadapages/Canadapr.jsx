@@ -17,9 +17,9 @@ const Canadapr = () =>{
             </h3>
           </div>
           <header style={{ marginBottom: "40px" }}>
-            <h1 className="text-3xl font-semibold text-black text-center">
+            <h3 className="text-2xl font-semibold text-black text-center" style={{color:'rgb(3, 50, 53);'}}>
               Canada Permanent Residence Visa: Your Pathway to a New Life in Canada
-            </h1>
+            </h3>
           </header>
     
           <article>

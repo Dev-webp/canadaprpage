@@ -68,7 +68,7 @@ const ContactPage = () => {
               style={{ fontFamily: "Times New Roman, serif" }} // Apply Times New Roman
               variants={titleVariants}
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-tr from-red-700 to-gray-700 mt-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-tr from-black to-black mt-6">
                 Migrate to Canada Permanent Residence Visa
               </span>
             </motion.h1>
