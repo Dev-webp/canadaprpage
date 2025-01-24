@@ -64,7 +64,7 @@ const ContactPage = () => {
             animate="visible"
           >
             <motion.h1
-              className="font-semibold uppercase leading-tight text-teal-950 text-4xl sm:text-5xl lg:text-[3.50rem] mt-10"
+               className="font-semibold uppercase leading-tight text-teal-950 text-3xl sm:text-4xl md:text-5xl lg:text-[3.50rem] mt-12 sm:mt-12"
               style={{ fontFamily: "Times New Roman, serif" }} // Apply Times New Roman
               variants={titleVariants}
             >
